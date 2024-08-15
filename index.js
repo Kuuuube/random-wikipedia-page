@@ -48,13 +48,6 @@ function openPageIfBoundsAreValid(start, finish) {
     $("#pageInfo").css("visibility", "visible");
 }
 
-function iframeHasLoaded() {
-    iframeLoadCount++;
-    if (iframeLoadCount > 1) {
-        $("#pageInfo").css("visibility", "hidden");
-    }
-}
-
 function openPageInNewTab() {
     window.open($("#wikipedia_page_iframe").attr("src"));
 }

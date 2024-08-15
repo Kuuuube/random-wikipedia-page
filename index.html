@@ -12,29 +12,30 @@
   <script src="paths.js"></script>
   <script src="index.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="general.css">
   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body>
-  <div id="header">
-    <div id="controls">
-      <button id="openRandomPage" type="button" onclick="requestOpenRandomPage()">Open Random Page</button>
-      from rank
-      <input id="start" type="text" value="1" class="range-inputs">
-      to
-      <input id="finish" type="text" value="10000" class="range-inputs">
-      <span class="minMaxRules">(min 1 / max 200,000)</span>
-    </div>
-    <div id="pageInfoRow">
-      <div id="pageInfo">
-        This page's rank: <span id="rank">&nbsp;</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button" onclick="openPageInNewTab()" id="new-tab-button">Open in new tab</button>
+  <div class="flexbox">
+    <div id="header">
+      <div id="controls">
+        <button id="openRandomPage" type="button" onclick="requestOpenRandomPage()">Open Random Page</button>
+        from rank
+        <input id="start" type="text" value="1" class="range-inputs">
+        to
+        <input id="finish" type="text" value="10000" class="range-inputs">
+        <span class="minMaxRules">(min 1 / max 200,000)</span>
+      </div>
+      <div id="pageInfoRow">
+        <div id="pageInfo">
+          This page's rank: <span id="rank">&nbsp;</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" onclick="openPageInNewTab()" id="new-tab-button">Open in new tab</button>
+        </div>
       </div>
     </div>
+    <iframe id="wikipedia_page_iframe" name="wikipedia_page_iframe" title="wikipedia_page_iframe"></iframe>
   </div>
-  <iframe id="wikipedia_page_iframe" name="wikipedia_page_iframe" title="wikipedia_page_iframe"></iframe>
 </body>
 
 </html>

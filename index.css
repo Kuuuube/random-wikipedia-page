@@ -1,4 +1,45 @@
-﻿.minMaxRules {
+﻿html {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	font-family: Sans-Serif;
+	font-size: 13px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: #2911dd;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #4e48e2;
+}
+
+h1 {
+	background-color: #b8e4e2;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 4px;
+	border-bottom: 1px solid #999999;
+	border-top: 1px solid #999999;
+}
+
+h3 {
+	padding-top: 10px;
+}
+
+.minMaxRules {
 	font-size: 11px;
 	white-space: pre;
 }
@@ -10,10 +51,13 @@
 	display: block;
 }
 
-#pageInfoRow,
-#footer {
+#pageInfoRow {
 	border-bottom: 1px solid #999999;
 	border-top: 1px solid #999999;
+	width: 100%;
+	background-color: #b8e4e2;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 #controls {
@@ -22,26 +66,9 @@
 	background-color: #b4e5e35e;
 }
 
-#pageInfoRow {
-	width: 100%;
-	background-color: #b8e4e2;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-
 #openRandomPage {
 	font-size: 16px;
 	font-weight: bold;
-}
-
-.footnote {
-	font-size: 12px;
-}
-
-#footer {
-	background-color: #b8e4e2;
-	font-size: 12px;
-	padding: 6px;
 }
 
 .range-inputs {
@@ -52,13 +79,19 @@
 	font-size: 12px;
 }
 
-@media only screen and (max-width: 600px) {
-	#footer {
-		font-size: 11px;
-		padding: 4px;
-	}
+.flexbox {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: column;
+}
 
+@media only screen and (max-width: 600px) {
 	#openRandomPage {
 		font-size: 12px;
+	}
+	h1 {
+		font-size: 16px;
+		padding: 2px;
 	}
 }

@@ -1,21 +1,10 @@
 ﻿var iframeLoadCount = 0;
 
-$(document).ready(function () {
-    setIframeHeight();
-    requestOpenRandomPage();
-});
-
-$(window).resize(function () {
-    setIframeHeight();
-});
-
-function setIframeHeight() {
-    $("#wikipedia_page_iframe").height($(window).height() - $("#header").outerHeight());
-}
+document.addEventListener("DOMContentLoaded", requestOpenRandomPage);
 
 function requestOpenRandomPage() {
-    var start = $("#start").val();
-    var finish = $("#finish").val();
+    var start = document.querySelector("#start").value;
+    var finish = document.querySelector("#finish").value;
     openPageIfBoundsAreValid(start, finish);
 }
 
@@ -42,14 +31,13 @@ function openPageIfBoundsAreValid(start, finish) {
     url = "https://ja.wikipedia.org/wiki/Special:Random";
 
     iframeLoadCount = 0;
-    $("#wikipedia_page_iframe").attr("src", url);
+    document.querySelector("#wikipedia_page_iframe").setAttribute("src", url);
 
-    $("#rank").text(addCommas(rank));
-    $("#pageInfo").css("visibility", "visible");
+    document.querySelector("#rank").textContent = addCommas(rank);
 }
 
 function openPageInNewTab() {
-    window.open($("#wikipedia_page_iframe").attr("src"));
+    window.open(document.querySelector("#wikipedia_page_iframe").getAttribute("src"));
 }
 
 function addCommas(nStr) {

@@ -12,11 +12,6 @@ body {
 	height: 100%;
 }
 
-.minMaxRules {
-	font-size: 11px;
-	white-space: pre;
-}
-
 #wikipedia_page_iframe {
 	width: 100%;
 	height: 100%;
@@ -31,10 +26,6 @@ body {
 
 .param-input {
 	width: 50px;
-}
-
-#new-tab-button {
-	font-size: 12px;
 }
 
 #controls {

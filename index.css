@@ -52,9 +52,39 @@ body {
 	font-size: 12px;
 }
 
+#controls {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+
+#controls > * {
+    padding-left: 5px;
+}
+
 .flexbox {
 	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-flow: column;
+}
+
+.combobox {
+	display: inline-block;
+	position: relative;
+	width: 50px;
+}
+
+.combobox select {
+	width: 100%;
+}
+
+.combobox > * {
+	box-sizing: border-box;
+	height: 1.5em;
+}
+
+.combobox input {
+	position: absolute;
+	width: calc(100% - 25px);
 }

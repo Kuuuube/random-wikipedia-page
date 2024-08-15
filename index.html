@@ -19,7 +19,39 @@
     <div id="header">
       <div id="controls">
         <button id="openRandomPage" type="button" onclick="requestOpenRandomPage()">Open Random Page</button>
-        from language <input id="language" type="text" value="ja" class="param-input">
+        <span>
+          from language
+        </span>
+        <div class="combobox">
+          <input id="language" type="text" value="ja" class="param-input">
+          <select onchange="this.previousElementSibling.value=this.value; this.previousElementSibling.focus()">
+            <option>ar</option>
+            <option>bn</option>
+            <option>cs</option>
+            <option>de</option>
+            <option>en</option>
+            <option>es</option>
+            <option>fa</option>
+            <option>fi</option>
+            <option>fr</option>
+            <option>he</option>
+            <option>hu</option>
+            <option>id</option>
+            <option>it</option>
+            <option>ja</option>
+            <option>ko</option>
+            <option>nl</option>
+            <option>pl</option>
+            <option>pt</option>
+            <option>ru</option>
+            <option>sv</option>
+            <option>th</option>
+            <option>tr</option>
+            <option>uk</option>
+            <option>vi</option>
+            <option>zh</option>
+          </select>
+        </div>
       </div>
       <div id="pageInfoRow">
         <div id="pageInfo">

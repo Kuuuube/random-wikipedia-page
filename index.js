@@ -1,8 +1,6 @@
 ﻿var iframeLoadCount = 0;
 
 $(document).ready(function () {
-    useSavedValueForStart();
-    useSavedValueForFinish();
     setIframeHeight();
     requestOpenRandomPage();
 });
@@ -18,8 +16,6 @@ function setIframeHeight() {
 function requestOpenRandomPage() {
     var start = $("#start").val();
     var finish = $("#finish").val();
-    saveValueForStart(start);
-    saveValueForFinish(finish);
     openPageIfBoundsAreValid(start, finish);
 }
 
@@ -56,28 +52,6 @@ function iframeHasLoaded() {
     iframeLoadCount++;
     if (iframeLoadCount > 1) {
         $("#pageInfo").css("visibility", "hidden");
-    }
-}
-
-function saveValueForStart(start) {
-    Cookies.set('start', start, { expires: 999999 });
-}
-
-function saveValueForFinish(finish) {
-    Cookies.set('finish', finish, { expires: 999999 });
-}
-
-function useSavedValueForStart() {
-    var start = Cookies.get('start');
-    if (start !== undefined) {
-        $("#start").val(start);
-    }
-}
-
-function useSavedValueForFinish() {
-    var finish = Cookies.get('finish');
-    if (finish !== undefined) {
-        $("#finish").val(finish);
     }
 }
 

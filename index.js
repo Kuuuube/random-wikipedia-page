@@ -6,7 +6,3 @@ function requestOpenRandomPage() {
 
     document.querySelector("#wikipedia_page_iframe").setAttribute("src", url);
 }
-
-function openPageInNewTab() {
-    window.open(document.querySelector("#wikipedia_page_iframe").getAttribute("src"));
-}

@@ -20,7 +20,6 @@ function requestOpenRandomPage() {
     var finish = $("#finish").val();
     saveValueForStart(start);
     saveValueForFinish(finish);
-    logToGoogleAnalytics(start, finish);
     openPageIfBoundsAreValid(start, finish);
 }
 
@@ -58,18 +57,6 @@ function iframeHasLoaded() {
     if (iframeLoadCount > 1) {
         $("#pageInfo").css("visibility", "hidden");
     }
-}
-function logToGoogleAnalytics(start, finish) {
-    gtag('event', start, {
-        'event_category': 'open-start',
-        'event_label': start,
-        'value': Number(start)
-    });
-    gtag('event', finish, {
-        'event_category': 'open-finish',
-        'event_label': finish,
-        'value': Number(finish)
-    });
 }
 
 function saveValueForStart(start) {

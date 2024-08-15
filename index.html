@@ -9,7 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.ico">
 
-  <script src="paths.js"></script>
   <script src="index.js"></script>
 
   <link rel="stylesheet" type="text/css" href="index.css">
@@ -20,15 +19,11 @@
     <div id="header">
       <div id="controls">
         <button id="openRandomPage" type="button" onclick="requestOpenRandomPage()">Open Random Page</button>
-        from rank
-        <input id="start" type="text" value="1" class="range-inputs">
-        to
-        <input id="finish" type="text" value="10000" class="range-inputs">
-        <span class="minMaxRules">(min 1 / max 200,000)</span>
+        from language <input id="language" type="text" value="ja" class="range-inputs">
       </div>
       <div id="pageInfoRow">
         <div id="pageInfo">
-          This page's rank: <span id="rank">&nbsp;</span>
+          This page's rank: <span id="rank">Unknown</span>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <button type="button" onclick="openPageInNewTab()" id="new-tab-button">Open in new tab</button>
         </div>

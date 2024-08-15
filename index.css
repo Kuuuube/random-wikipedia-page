@@ -1,5 +1,4 @@
-﻿
-.minMaxRules {
+﻿.minMaxRules {
 	font-size: 11px;
 	white-space: pre;
 }
@@ -11,8 +10,8 @@
 	display: block;
 }
 
-
-#pageInfoRow, #footer {
+#pageInfoRow,
+#footer {
 	border-bottom: 1px solid #999999;
 	border-top: 1px solid #999999;
 }
@@ -24,10 +23,10 @@
 }
 
 #pageInfoRow {
-	 width: 100%;
-	 background-color: #b8e4e2;
-	 padding-top: 2px;
-	 padding-bottom: 2px;
+	width: 100%;
+	background-color: #b8e4e2;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 #openRandomPage {
@@ -53,9 +52,7 @@
 	font-size: 12px;
 }
 
-
 @media only screen and (max-width: 600px) {
-
 	#footer {
 		font-size: 11px;
 		padding: 4px;
@@ -64,6 +61,4 @@
 	#openRandomPage {
 		font-size: 12px;
 	}
-
 }
-

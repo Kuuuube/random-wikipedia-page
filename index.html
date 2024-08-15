@@ -1,89 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Random Wikipedia Page Selector</title>
 
-    <meta
-      name="google-site-verification"
-      content="Q2AwqMaQmn-7ufMo27Guuh1DfcuZsVUa7F0hRLH6C1k"
-    >
+<head>
+  <title>Random Wikipedia Page Selector</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico">
+  <meta name="google-site-verification" content="Q2AwqMaQmn-7ufMo27Guuh1DfcuZsVUa7F0hRLH6C1k">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-128490828-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
 
-      gtag("config", "UA-128490828-1");
-    </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128490828-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    <!-- Google Analytics 4 -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2YY996FL5L"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-2YY996FL5L");
-    </script>
+    gtag("config", "UA-128490828-1");
+  </script>
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YY996FL5L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-2YY996FL5L");
+  </script>
 
-    <script src="paths.js"></script>
-    <script src="index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="general.css">
-    <link rel="stylesheet" type="text/css" href="index.css">
-  </head>
-  <body>
-    <div id="header">
-      <div id="controls">
-        <button
-          id="openRandomPage"
-          type="button"
-          onclick="requestOpenRandomPage()"
-        >Open Random Page</button>
-        from rank
-        <input id="start" type="text" value="1" class="range-inputs">
-        to
-        <input id="finish" type="text" value="10000" class="range-inputs">
-        <span class="minMaxRules">(min 1 / max 200,000)</span>
-      </div>
-      <div id="pageInfoRow">
-        <div id="pageInfo">
-          This page's rank: <span id="rank">&nbsp;</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button
-            type="button"
-            onclick="openPageInNewTab()"
-            id="new-tab-button"
-          >Open in new tab</button>
-        </div>
+  <script src="paths.js"></script>
+  <script src="index.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="general.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+  <div id="header">
+    <div id="controls">
+      <button id="openRandomPage" type="button" onclick="requestOpenRandomPage()">Open Random Page</button>
+      from rank
+      <input id="start" type="text" value="1" class="range-inputs">
+      to
+      <input id="finish" type="text" value="10000" class="range-inputs">
+      <span class="minMaxRules">(min 1 / max 200,000)</span>
+    </div>
+    <div id="pageInfoRow">
+      <div id="pageInfo">
+        This page's rank: <span id="rank">&nbsp;</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" onclick="openPageInNewTab()" id="new-tab-button">Open in new tab</button>
       </div>
     </div>
-    <iframe
-      id="wikipedia_page_iframe"
-      name="wikipedia_page_iframe"
-      title="wikipedia_page_iframe"
-      onload="iframeHasLoaded()"
-    ></iframe>
-  </body>
+  </div>
+  <iframe id="wikipedia_page_iframe" name="wikipedia_page_iframe" title="wikipedia_page_iframe"
+    onload="iframeHasLoaded()"></iframe>
+</body>
+
 </html>

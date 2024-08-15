@@ -12,7 +12,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: #2911DD;
+	color: #2911dd;
 	font-weight: bold;
 }
 
@@ -23,7 +23,6 @@ a:hover {
 a:visited {
 	color: #4e48e2;
 }
-
 
 h1 {
 	background-color: #b8e4e2;
@@ -38,12 +37,9 @@ h3 {
 	padding-top: 10px;
 }
 
-
 @media only screen and (max-width: 600px) {
-
 	h1 {
 		font-size: 16px;
 		padding: 2px;
-    }
-
+	}
 }

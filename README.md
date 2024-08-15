@@ -10,6 +10,10 @@ Opens a random Wikipedia page in an iframe for easy re-rolling of pages.
 
 3. Click `Open Random Page`.
 
+## Screenshot
+
+![](./screenshot.png)
+
 ## Credits
 
 Huge thanks to [Gary Stephens](https://github.com/garystephens) for the original code at [RandomWikipediaPage](https://github.com/garystephens/RandomWikipediaPage).

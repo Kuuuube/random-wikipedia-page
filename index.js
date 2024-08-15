@@ -1,6 +1,4 @@
-﻿var iframeLoadCount = 0;
-
-document.addEventListener("DOMContentLoaded", requestOpenRandomPage);
+﻿document.addEventListener("DOMContentLoaded", requestOpenRandomPage);
 
 function requestOpenRandomPage() {
     var start = document.querySelector("#start").value;
@@ -30,7 +28,6 @@ function openPageIfBoundsAreValid(start, finish) {
     rank = Number(start) + (Math.round(Math.random() * Number(finish - start)));
     url = "https://ja.wikipedia.org/wiki/Special:Random";
 
-    iframeLoadCount = 0;
     document.querySelector("#wikipedia_page_iframe").setAttribute("src", url);
 
     document.querySelector("#rank").textContent = addCommas(rank);

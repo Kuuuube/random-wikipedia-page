@@ -1,6 +1,6 @@
 # Random Wikipedia Page
 
-Open a random Wikipedia page in an iframe for easy re-rolling of pages.
+Opens random Wikipedia pages in an iframe with easy re-rolling of pages and support for all languages.
 
 ## Credits
 

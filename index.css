@@ -12,33 +12,6 @@ body {
 	height: 100%;
 }
 
-a {
-	text-decoration: none;
-	color: #2911dd;
-	font-weight: bold;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:visited {
-	color: #4e48e2;
-}
-
-h1 {
-	background-color: #b8e4e2;
-	margin-top: 0;
-	margin-bottom: 0;
-	padding: 4px;
-	border-bottom: 1px solid #999999;
-	border-top: 1px solid #999999;
-}
-
-h3 {
-	padding-top: 10px;
-}
-
 .minMaxRules {
 	font-size: 11px;
 	white-space: pre;
@@ -84,14 +57,4 @@ h3 {
 	height: 100%;
 	display: flex;
 	flex-flow: column;
-}
-
-@media only screen and (max-width: 600px) {
-	#openRandomPage {
-		font-size: 12px;
-	}
-	h1 {
-		font-size: 16px;
-		padding: 2px;
-	}
 }

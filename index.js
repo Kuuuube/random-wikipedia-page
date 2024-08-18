@@ -19,9 +19,11 @@ function open_page(lang) {
 }
 
 function hide_iframe() {
+    document.querySelector("#random_page_button").disabled = true;
     document.querySelector("#wikipedia_page_iframe").style.display = "none";
 }
 
 function show_iframe() {
+    document.querySelector("#random_page_button").disabled = false;
     document.querySelector("#wikipedia_page_iframe").style.display = "";
 }

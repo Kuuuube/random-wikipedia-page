@@ -9,10 +9,19 @@ function init_page() {
 }
 
 function random_page_button() {
+    hide_iframe();
     open_page(document.querySelector("#language").value);
 }
 
 function open_page(lang) {
     let url = "https://" + lang + ".wikipedia.org/wiki/Special:Random";
     document.querySelector("#wikipedia_page_iframe").setAttribute("src", url);
+}
+
+function hide_iframe() {
+    document.querySelector("#wikipedia_page_iframe").style.display = "none";
+}
+
+function show_iframe() {
+    document.querySelector("#wikipedia_page_iframe").style.display = "";
 }

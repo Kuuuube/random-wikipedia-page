@@ -8,13 +8,20 @@ const TOP_DATA_FEATURE_LANGS = ["ja"];
 document.addEventListener("DOMContentLoaded", init_page);
 
 function init_page() {
-    let stripped_lang = BROWSER_LANG.replace(/-.*/, "");
-    document.querySelector("#language").value = stripped_lang;
+    const urlParams = new URLSearchParams(window.location.search);
+    let lang = urlParams.get('lang');
+    let max_range = urlParams.get('maxrange');
+    if (!lang) {
+        lang = BROWSER_LANG.replace(/-.*/, "");
+    }
+    document.querySelector("#language").value = lang;
+
+    set_url_params(lang, max_range);
 
     document.querySelector("#language").addEventListener("input", apply_language_features);
     apply_language_features();
 
-    open_page(BROWSER_LANG.replace(/-.*/, ""));
+    open_page(lang);
 }
 
 async function fetch_top_data(lang) {
@@ -40,6 +47,7 @@ function apply_language_features() {
 function random_page_button() {
     hide_iframe();
     open_page(document.querySelector("#language").value);
+    set_url_params();
 }
 
 function open_page(lang) {
@@ -55,6 +63,17 @@ function open_page(lang) {
     }
 
     document.querySelector("#wikipedia_page_iframe").setAttribute("src", url);
+}
+
+function set_url_params(lang, max_range) {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (lang) {
+        urlParams.set('lang', lang);
+    }
+    if (max_range) {
+        urlParams.set('maxrange', max_range);
+    }
+    window.history.pushState(null, null, "?" + urlParams.toString());
 }
 
 function hide_iframe() {

@@ -15,6 +15,7 @@ function init_page() {
         lang = BROWSER_LANG.replace(/-.*/, "");
     }
     document.querySelector("#language").value = lang;
+    document.querySelector("#rank_max").value = max_range;
 
     set_url_params(lang, max_range);
 
@@ -45,9 +46,11 @@ function apply_language_features() {
 }
 
 function random_page_button() {
+    let lang = document.querySelector("#language").value;
+    let max_range = document.querySelector("#rank_max").value;
     hide_iframe();
-    open_page(document.querySelector("#language").value);
-    set_url_params();
+    open_page(lang);
+    set_url_params(lang, max_range);
 }
 
 function open_page(lang) {

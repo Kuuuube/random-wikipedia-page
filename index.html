@@ -20,7 +20,7 @@
       </span>
       <div class="combobox">
         <input id="language" type="text" value="ja" class="param-input">
-        <select onchange="this.previousElementSibling.value=this.value; this.previousElementSibling.focus()">
+        <select id="language_select" onchange="this.previousElementSibling.value=this.value; this.previousElementSibling.focus(); apply_language_features()">
           <option>ar</option>
           <option>bn</option>
           <option>cs</option>
@@ -48,6 +48,11 @@
           <option>zh</option>
         </select>
       </div>
+      <span id="rank_picker">
+        from the top 1 to
+        <input id="rank_max" class="param-input" type="text" placeholder="∞">
+        pages
+      </span>
     </div>
     <iframe id="wikipedia_page_iframe" onload="show_iframe(this)"></iframe>
   </div>

@@ -133,7 +133,7 @@ function max_rank_visibility(e) {
     if (e.data) {
         document.querySelector("#rank_picker").style.display = "none";
         document.querySelector("#rank_max").value = "";
-    } else {
+    } else if (TOP_DATA_FEATURE_LANGS.includes(document.querySelector("#language").value)) {
         document.querySelector("#rank_picker").style.display = "initial";
     }
 }

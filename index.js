@@ -70,12 +70,17 @@ function open_page(lang) {
 
 function set_url_params(lang, max_range) {
     const urlParams = new URLSearchParams(window.location.search);
+
+    urlParams.delete("lang");
     if (lang) {
-        urlParams.set('lang', lang);
+        urlParams.set("lang", lang);
     }
+
+    urlParams.delete("maxrange");
     if (max_range) {
-        urlParams.set('maxrange', max_range);
+        urlParams.set("maxrange", max_range);
     }
+
     window.history.pushState(null, null, "?" + urlParams.toString());
 }
 

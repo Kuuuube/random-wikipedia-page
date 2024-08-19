@@ -2,7 +2,8 @@
 
 let random_range_enabled = false;
 
-let ja_wikipedia_top_data = [];
+let wikipedia_top_data = [];
+const TOP_DATA_FEATURE_LANGS = ["ja"];
 
 document.addEventListener("DOMContentLoaded", init_page);
 
@@ -17,17 +18,17 @@ function init_page() {
 }
 
 async function fetch_top_data(lang) {
-    let response = await fetch("pageview_data/ja_wikipedia_top.json");
-    ja_wikipedia_top_data = await response.json()
-    if (ja_wikipedia_top_data.length > 0) {
+    let response = await fetch("pageview_data/" + lang + "_wikipedia_top.json");
+    wikipedia_top_data = await response.json()
+    if (wikipedia_top_data.length > 0) {
         open_page(lang);
     }
 }
 
 function apply_language_features() {
     let lang = document.querySelector("#language").value;
-    let rank_feature_langs = ["ja"];
-    if (rank_feature_langs.includes(lang)) {
+    wikipedia_top_data = [];
+    if (TOP_DATA_FEATURE_LANGS.includes(lang)) {
         random_range_enabled = true;
         document.querySelector("#rank_picker").style.display = "initial";
     } else {
@@ -45,12 +46,12 @@ function open_page(lang) {
     let url = "https://" + lang + ".wikipedia.org/wiki/Special:Random";
 
     let rank_max = parseInt(document.querySelector("#rank_max").value);
-    if (random_range_enabled && rank_max && lang == "ja") {
-        if (ja_wikipedia_top_data.length == 0) {
+    if (random_range_enabled && rank_max && TOP_DATA_FEATURE_LANGS.includes(lang)) {
+        if (wikipedia_top_data.length == 0) {
             fetch_top_data(lang);
             return;
         }
-        url = "https://" + lang + ".wikipedia.org/wiki/" + ja_wikipedia_top_data[Math.floor(Math.random() * Math.min(rank_max, ja_wikipedia_top_data.length))];
+        url = "https://" + lang + ".wikipedia.org/wiki/" + wikipedia_top_data[Math.floor(Math.random() * Math.min(rank_max, wikipedia_top_data.length))];
     }
 
     document.querySelector("#wikipedia_page_iframe").setAttribute("src", url);

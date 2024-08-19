@@ -10,6 +10,6 @@
 
     I use [kuuubedit](https://github.com/Kuuuube/kuuubedit) for this.
 
-3. Open `sort.py` and replace `input_filename`, `output_filename`, `output_variable`, and `max_entries` with your desired values.
+3. Open `sort.py` and replace `input_filename`, `output_filename`, and `max_entries` with your desired values.
 
 4. Run `sort.py`
